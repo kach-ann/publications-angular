@@ -12,7 +12,7 @@ export interface Role {
 }
 
 export interface User {
-  username?: string;
+  login?: string;
   firstName?: string;
   lastName?: string;
   email?: string;

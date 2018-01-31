@@ -14,6 +14,7 @@ import {AccountService} from './account.service';
 import {LocalStorageModule} from 'angular-2-local-storage';
 import {PrincipalService} from './principal.service';
 import {AuthHttpInterceptor} from './http-interceptor';
+import { RegistrationComponent } from './registration/registration.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import {AuthHttpInterceptor} from './http-interceptor';
     AppComponent,
     PublicationListComponent,
     NavbarComponent,
-    LoginComponent
+    LoginComponent,
+    RegistrationComponent
   ],
   imports: [
     NgbModule.forRoot(),

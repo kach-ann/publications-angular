@@ -9,13 +9,15 @@ import 'rxjs/add/observable/of';
 export class AccountService {
   private readonly url = 'api/authenticate';
   private readonly accountUrl = 'api/account';
+  private readonly registrationUrl = 'api/register'
+
 
   constructor(private http: HttpClient) {
   }
 
   login(user: User): Observable<string> {
     return this.http.post(this.url, {
-      'username': user.username,
+      'username': user.login,
       'password': user.password
     })
       .map((resp) => resp['id_token']);
@@ -25,4 +27,10 @@ export class AccountService {
   getCurrentUser(): Observable<User> {
     return this.http.get(this.accountUrl);
   }
+
+  registration (user: User): Observable<any> {
+    return this.http.post(this.registrationUrl, user)
+  }
+
 }
+
