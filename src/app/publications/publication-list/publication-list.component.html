@@ -2,3 +2,22 @@
   Publications
 </h1>
 <button type="button" class="btn btn-primary">New</button>
+
+<h2> Publication </h2>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Text</th>
+      <th>Data</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let publication of publications$ | async">
+      <td>{{publication.title}}</td>
+      <td>{{publication.text}}</td>
+      <td>{{publication.publicationDate | date}}</td>
+    </tr>
+  </tbody>
+
+
+</table>

@@ -9,9 +9,14 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
       </ul>
-      <span class="navbar-text">
-      Anna Kachan
-    </span>
+      <span *ngIf="currentUser$ | async as currentUser; else notAuthorized" class="navbar-text">
+        {{ currentUser.firstName }} {{ currentUser.lastName }}
+        <button type="button" class="btn btn-danger" (click)="logout()">Logout</button>
+
+      </span>
+      <ng-template #notAuthorized>
+        <button type="button" class="btn btn-primary" routerLink="/login">Login</button>
+      </ng-template>
     </div>
   </div>
 </nav>
