@@ -2,12 +2,7 @@ export interface Rubric {
   title: string;
 }
 
-export enum Roles {
-  ADMIN,
-  USER
-}
-
-export interface Role {
+export interface Authority {
   name: string;
 }
 
@@ -17,7 +12,7 @@ export interface User {
   lastName?: string;
   email?: string;
   password?: string;
-  roles?: Role[];
+  authorities?: Authority[];
 }
 
 export interface Publication {

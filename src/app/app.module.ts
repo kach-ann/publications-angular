@@ -15,6 +15,8 @@ import {LocalStorageModule} from 'angular-2-local-storage';
 import {PrincipalService} from './principal.service';
 import {AuthHttpInterceptor} from './http-interceptor';
 import { RegistrationComponent } from './registration/registration.component';
+import { UsersComponent } from './users/users.component';
+import {AuthGuard} from './auth-guard.service';
 
 
 @NgModule({
@@ -23,7 +25,8 @@ import { RegistrationComponent } from './registration/registration.component';
     PublicationListComponent,
     NavbarComponent,
     LoginComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    UsersComponent
   ],
   imports: [
     NgbModule.forRoot(),
@@ -44,7 +47,9 @@ import { RegistrationComponent } from './registration/registration.component';
       provide: HTTP_INTERCEPTORS,
       useClass: AuthHttpInterceptor,
       multi: true,
-    }],
+    },
+    AuthGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -35,7 +35,7 @@
     <label for="exampleInputPassword2">Repeat password</label>
     <input type="password" class="form-control" required minlength="4" id="exampleInputPassword2" [(ngModel)]="repeatPassword" name="repeatPassword"
            placeholder="Password">
-    <small class="text-danger" *ngIf="passwordsDoNotMatch">*Passwords do not match</small>
+    <small *ngIf="passwordsDoNotMatch" class="text-danger">*Passwords do not match</small>
   </div>
   <button type="submit" [disabled]="form.invalid" class="btn btn-primary">Submit</button>
 </form>

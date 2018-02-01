@@ -34,6 +34,11 @@ export class PrincipalService {
     return this.user$.asObservable();
   }
 
+  isAdmin(): Observable<boolean> {
+    return this.getCurrentUser()
+      .map((currentUser) => currentUser && currentUser.authorities.indexOf('ROLE_ADMIN') !== -1);
+  }
+
   logout() {
     this.localStorageService.remove('token');
     this.user$.next(null);

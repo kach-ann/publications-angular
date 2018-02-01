@@ -9,8 +9,8 @@ import 'rxjs/add/observable/of';
 export class AccountService {
   private readonly url = 'api/authenticate';
   private readonly accountUrl = 'api/account';
-  private readonly registrationUrl = 'api/register'
-
+  private readonly registrationUrl = 'api/register';
+  private readonly usersUrl = 'api/users';
 
   constructor(private http: HttpClient) {
   }
@@ -29,8 +29,11 @@ export class AccountService {
   }
 
   registration (user: User): Observable<any> {
-    return this.http.post(this.registrationUrl, user)
+    return this.http.post(this.registrationUrl, user);
   }
 
+  getUsers(): Observable< User[]> {
+    return this.http.get<User[]>(this.usersUrl);
+  }
 }
 
