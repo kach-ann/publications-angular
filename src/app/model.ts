@@ -2,17 +2,13 @@ export interface Rubric {
   title: string;
 }
 
-export interface Authority {
-  name: string;
-}
-
 export interface User {
   login?: string;
   firstName?: string;
   lastName?: string;
   email?: string;
   password?: string;
-  authorities?: Authority[];
+  authorities?: string[];
 }
 
 export interface Publication {
