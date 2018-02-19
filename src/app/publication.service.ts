@@ -13,4 +13,8 @@ export class PublicationService {
     getPublications(): Observable<Publication[]> {
       return this.http.get<Publication[]>(this.url);
     }
+
+    savePublication(publication: Publication): Observable<Publication> {
+      return this.http.post<Publication>(this.url, publication);
+    }
 }

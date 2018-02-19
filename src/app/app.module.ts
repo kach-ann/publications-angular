@@ -17,6 +17,7 @@ import {AuthHttpInterceptor} from './http-interceptor';
 import { RegistrationComponent } from './registration/registration.component';
 import { UsersComponent } from './users/users.component';
 import {AuthGuard} from './auth-guard.service';
+import { NewPublicationComponent } from './publications/new-publication/new-publication.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import {AuthGuard} from './auth-guard.service';
     NavbarComponent,
     LoginComponent,
     RegistrationComponent,
-    UsersComponent
+    UsersComponent,
+    NewPublicationComponent
   ],
   imports: [
     NgbModule.forRoot(),
@@ -50,6 +52,7 @@ import {AuthGuard} from './auth-guard.service';
     },
     AuthGuard
   ],
+  entryComponents: [NewPublicationComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

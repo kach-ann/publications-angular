@@ -12,10 +12,10 @@ export interface User {
 }
 
 export interface Publication {
-  id: number;
-  title: string;
-  text: string;
-  publicationDate: Date;
+  id?: number;
+  title?: string;
+  text?: string;
+  publicationDate?: Date;
   rubrics?: Rubric[];
   author?: User;
 }

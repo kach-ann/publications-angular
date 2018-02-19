@@ -1,0 +1,30 @@
+<div class="modal-header">
+  <h4 class="modal-title">New Publication</h4>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<form (ngSubmit)="savePublication()">
+  <div class="modal-body">
+      <div class="form-group">
+        <label for="exampleFormControlSelect2">Rubrics</label>
+        <select multiple class="form-control" id="exampleFormControlSelect2" size="2" [(ngModel)]="publication.rubrics" name="rubrics">
+          <option value="1">1</option>
+          <option value="2">2</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="newTitle">Title</label>
+        <input type="text" class="form-control" id="newTitle" [(ngModel)]="publication.title" name="title">
+      </div>
+      <div class="form-group">
+        <label for="newPublication">Text</label>
+        <textarea class="form-control" id="newPublication" rows="6" [(ngModel)]="publication.text" name="text"></textarea>
+      </div>
+
+  </div>
+  <div class="modal-footer">
+    <button type="submit" class="btn btn-outline-success">Save</button>
+    <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
+  </div>
+</form>
