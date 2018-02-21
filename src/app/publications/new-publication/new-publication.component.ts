@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 import {Publication} from '../../model';
-import {PublicationService} from "../../publication.service";
+import {PublicationService} from '../../publication.service';
 
 @Component({
   selector: 'app-new-publication',
@@ -9,7 +9,7 @@ import {PublicationService} from "../../publication.service";
   styleUrls: ['./new-publication.component.css']
 })
 export class NewPublicationComponent implements OnInit {
-  publication: Publication = {}
+  publication: Publication = {};
 
   constructor(public activeModal: NgbActiveModal,
               private  publicationService: PublicationService) {}
@@ -18,6 +18,7 @@ export class NewPublicationComponent implements OnInit {
   }
 
   savePublication() {
-    this.publicationService.savePublication(this.publication).subscribe()
+    this.publicationService.savePublication(this.publication)
+      .subscribe((result) => this.activeModal.close());
   }
 }
